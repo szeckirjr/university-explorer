@@ -17,7 +17,11 @@ test("renders a list of websites", async () => {
 });
 
 test("renders nothing when no websites are provided", async () => {
-  render(WebsiteList);
+  render(WebsiteList, {
+    props: {
+      websites: [],
+    },
+  });
 
   const noWebsites = screen.queryByText("🔗 Primary");
 
