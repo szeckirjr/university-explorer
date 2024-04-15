@@ -43,6 +43,7 @@ getRandomOptions();
       <GiftIcon class="h-6 w-6" />
       Surprise Me
     </button>
+    <div v-if="error" class="text-red-500">Error: {{ error.message }}</div>
     <div
       class="flex-grow overflow-y-auto px-6 py-6 sm:px-8 md:px-12 lg:px-16 xl:px-20"
     >
