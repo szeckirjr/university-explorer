@@ -1,8 +1,9 @@
 import { reactive } from "vue";
 import type { Country, University } from "./helpers/types";
 import { precomputedCountries } from "./helpers/country";
+import { computed } from "vue";
 
-const getInitialCountries = computed(async () => {
+export const getInitialCountries = computed(async () => {
   const baseUrl = "http://universities.hipolabs.com/search";
   const response = await fetch(baseUrl);
   const data = (await response.json()) as University[];
