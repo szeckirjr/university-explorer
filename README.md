@@ -1,75 +1,57 @@
-# Nuxt 3 Minimal Starter
+# University Explorer
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+A responsive web application for displaying university data from the "Hipo University Domains List" API, featuring searchable and manageable favorites across three interactive pages.
 
-## Setup
+## Installation and Running
 
-Make sure to install the dependencies:
+After cloning the repo, navigate to the project directory and run the following commands to run the application locally in development mode:
 
-```bash
-# npm
-npm install
-
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
 ```
-
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
-```bash
-# npm
+npm ci
 npm run dev
-
-# pnpm
-pnpm run dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
 ```
 
-## Production
+## Description
 
-Build the application for production:
+This project was created as a take-home interview step for Redbrick. The goal of this test was to develop a responsive web application that allows users to retrieve and display university data from the "Hipo University Domains List" API. The application should consist of two main pages:
 
-```bash
-# npm
-npm run build
+1. **Search**: featuring a country filter dropdown, a results table with university names, states/provinces, websites, and a favorites management button
+2. **Favorites**: displays a similar table that allows users to remove universities from their favorites.
 
-# pnpm
-pnpm run build
+Both pages should provide navigation between each other, and the favorites data should be stored locally in the browser.
 
-# yarn
-yarn build
+## Decisions and Assumptions
 
-# bun
-bun run build
+A few assumptions were made during the development of this project due to the time constraints and the scope of the project. These include:
+
+- There should be no need for a backend server to store the favorites data, as it is a simple application that can be managed locally in the browser
+- There should be no "worldwide" filter option, as performance issues arose when trying to retrieve all universities at once (alternatively, the country dropdown can have multiple selections to filter by multiple countries at once if desired by the user)
+- The application should be responsive and accessible, but not necessarily optimized for mobile devices
+
+## Features List
+
+- Three pages:
+  1. **Home**: provides a table with info from each university, as well as a search bar and country filter dropdown
+  2. **Favorites**: same styling as the home page, but only displays universities you have favorited, also does not include a country filter dropdown
+  3. **Explore**: This page contains a randomly generated set of 10 universities from around the world.
+- Responsive favoriting (homepage) & deleting of favorites (on favs page) that automatically update the UI with the click of an icon
+- Filter universities by their country (allows for multiple selections)
+- Search bar to search the names within the currently filtered table
+
+## Technologies Used
+
+- Vue.js 3
+- Nuxt.js 3
+- TypeScript
+- TailwindCSS
+- Headless UI
+- Git
+
+## Testing
+
+I chose to add tests using Jest, a framework I am familiar with, not because I think these tests are really proving anything, but because I wanted to ensure that no matter how simple of an application, there should always be some sort of testing to comply with coding best practices.
+To run the tests, execute these commands:
+
 ```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm run preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
+npm run test
 ```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.

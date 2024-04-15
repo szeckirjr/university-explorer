@@ -7,6 +7,7 @@ export const getFlagEmoji = (countryCode: string) => {
     .replace(/./g, (char) => String.fromCodePoint(127397 + char.charCodeAt(0)));
 };
 
+// Precomputed list of countries to help with the initial load performance
 export const precomputedCountries: Country[] = [
   {
     name: "Afghanistan",
