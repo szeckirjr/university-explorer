@@ -28,18 +28,18 @@ const isFavorite = (item: University) => {
 </script>
 
 <template>
-  <div class="relative overflow-x-auto flex-grow">
+  <div class="relative overflow-auto flex-grow">
     <table
       v-if="store.selectedCountries.length > 0"
-      class="table-fixed w-full max-h-20 text-sm text-left rtl:text-right relative"
+      class="table-fixed border w-full max-h-20 text-sm text-left rtl:text-right relative min-w-96"
     >
       <thead class="text-md uppercase sticky top-0">
         <tr>
-          <th scope="col" class="px-6 py-3">Name</th>
-          <th scope="col" class="px-6 py-3">Country</th>
-          <th scope="col" class="px-6 py-3">State/ Province</th>
-          <th scope="col" class="px-6 py-3">Websites</th>
-          <th scope="col" class="px-6 py-3 max-w-2 text-center">Favorite</th>
+          <th scope="col" class="px-6 py-3 w-56">Name</th>
+          <th scope="col" class="px-6 py-3 w-36">Country</th>
+          <th scope="col" class="px-6 py-3 w-28">State/ Province</th>
+          <th scope="col" class="px-6 py-3 w-28">Websites</th>
+          <th scope="col" class="px-6 py-3 w-24">Favorite</th>
         </tr>
       </thead>
       <tbody>
@@ -58,17 +58,19 @@ const isFavorite = (item: University) => {
           <td class="px-6 py-4">
             <WebsiteList :websites="item.web_pages" />
           </td>
-          <td class="px-6 py-4 flex justify-center">
-            <HeartIcon
-              v-if="isFavorite(item)"
-              class="h-6 w-6 text-red-500 cursor-pointer"
-              @click="toggleFavorite(item)"
-            />
-            <HeartOutline
-              v-else
-              class="h-6 w-6 text-gray-500 hover:fill-gray-500 cursor-pointer"
-              @click="toggleFavorite(item)"
-            />
+          <td class="px-6 py-4">
+            <div class="flex justify-center">
+              <HeartIcon
+                v-if="isFavorite(item)"
+                class="h-6 w-6 text-red-500 cursor-pointer"
+                @click="toggleFavorite(item)"
+              />
+              <HeartOutline
+                v-else
+                class="h-6 w-6 text-gray-500 hover:fill-gray-500 cursor-pointer"
+                @click="toggleFavorite(item)"
+              />
+            </div>
           </td>
         </tr>
       </tbody>

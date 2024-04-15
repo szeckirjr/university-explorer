@@ -32,7 +32,7 @@ const universities = computed(() => {
     <SearchBar v-model="search" />
   </div>
   <div
-    class="flex-grow overflow-y-auto px-6 py-6 sm:px-8 md:px-12 lg:px-16 xl:px-20"
+    class="flex-grow overflow-y-auto px-2 py-2 md:py-6 sm:px-8 md:px-12 lg:px-16 xl:px-20"
   >
     <span v-if="error" class="text-red-500">Error: {{ error.message }}</span>
     <UniversityTable

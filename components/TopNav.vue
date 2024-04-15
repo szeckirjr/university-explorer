@@ -23,14 +23,16 @@ const routes: {
 </script>
 
 <template>
-  <div class="flex justify-between p-6">
-    <a href="/" class="text-3xl font-extrabold">UniversityExplorer</a>
-    <div class="flex gap-4">
+  <div class="flex flex-col justify-between gap-4 md:flex-row p-6">
+    <a href="/" class="text-2xl md:text-3xl font-extrabold"
+      >UniversityExplorer</a
+    >
+    <div class="flex gap-2 md:gap-4">
       <NuxtLink
         v-for="page in routes"
         :key="page.name"
         :to="page.path"
-        class="text-xl flex items-center gap-1 hover:underline"
+        class="text-lg md:text-xl flex items-center gap-1 hover:underline"
         icon="route.icon"
         v-bind:class="{
           'font-bold': $route.path === page.path,

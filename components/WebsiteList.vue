@@ -8,7 +8,7 @@ const props = defineProps({
 </script>
 
 <template>
-  <div class="flex flex-row gap-4">
+  <div class="flex flex-col gap-4">
     <a
       v-for="(website, index) in websites"
       :href="website"
