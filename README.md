@@ -22,7 +22,7 @@ Both pages should provide navigation between each other, and the favorites data 
 
 ## Decisions and Assumptions
 
-A few assumptions were made during the development of this project due to the time constraints and the scope of the project. These include:
+A few assumptions were made during the development of this project due to the time constraints and the scope. These include:
 
 - There should be no need for a backend server to store the favorites data, as it is a simple application that can be managed locally in the browser
 - There should be no "worldwide" filter option, as performance issues arose when trying to retrieve all universities at once (alternatively, the country dropdown can have multiple selections to filter by multiple countries at once if desired by the user)
@@ -45,12 +45,13 @@ A few assumptions were made during the development of this project due to the ti
 - TypeScript
 - TailwindCSS
 - Headless UI
+- Vitest
 - Git
 
 ## Testing
 
-I chose to add tests using Jest, a framework I am familiar with, not because I think these tests are really proving anything, but because I wanted to ensure that no matter how simple of an application, there should always be some sort of testing to comply with coding best practices.
-To run the tests, execute these commands:
+I chose to add tests using Vitest, not because I think these tests are extensive or really proving anything, but because I wanted to ensure that no matter how simple of an application, there should always be some sort of testing to comply with coding best practices.
+To run the tests, execute:
 
 ```
 npm run test
