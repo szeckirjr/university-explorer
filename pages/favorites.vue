@@ -22,7 +22,7 @@ const search = ref("");
   </div>
   <div
     v-else
-    class="flex-grow overflow-y-auto px-6 py-6 sm:px-8 md:px-12 lg:px-16 xl:px-20"
+    class="flex-grow overflow-y-auto px-2 py-2 md:py-6 sm:px-8 md:px-12 lg:px-16 xl:px-20"
   >
     <UniversityTable :data="store.favorites" :search-filter="search" />
   </div>

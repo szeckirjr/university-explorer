@@ -11,6 +11,8 @@ npm ci
 npm run dev
 ```
 
+Now you can access the application at `http://localhost:3000`.
+
 ## Description
 
 This project was created as a take-home interview step for Redbrick. The goal of this test was to develop a responsive web application that allows users to retrieve and display university data from the "Hipo University Domains List" API. The application should consist of two main pages:

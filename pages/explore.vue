@@ -32,20 +32,22 @@ getRandomOptions();
 
 <template>
   <div class="px-6 py-2 text-center flex flex-col gap-6">
-    <h1 class="text-2xl">
+    <h1 class="text-xl md:text-2xl">
       Find random universities abroad by shuffling through universities around
       the world
     </h1>
     <button
       @click="getRandomOptions"
-      class="bg-blue-400 hover:bg-blue-500 transition-all p-2 px-4 text-white w-fit mx-auto text-xl font-bold rounded-lg flex gap-3"
+      class="bg-blue-400 hover:bg-blue-500 transition-all p-2 px-4 text-white w-fit mx-auto text-lg md:text-xl font-bold rounded-lg flex gap-3"
     >
       <GiftIcon class="h-6 w-6" />
       Surprise Me
     </button>
+  </div>
+  <div>
     <div v-if="error" class="text-red-500">Error: {{ error.message }}</div>
     <div
-      class="flex-grow overflow-y-auto px-6 py-6 sm:px-8 md:px-12 lg:px-16 xl:px-20"
+      class="flex-grow overflow-y-auto px-2 py-2 md:py-6 sm:px-8 md:px-12 lg:px-16 xl:px-20"
     >
       <UniversityTable :data="options" />
     </div>
