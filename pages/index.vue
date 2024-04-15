@@ -11,22 +11,22 @@ const { data, error } = useAsyncData("universities", async () => {
 
 const search = ref("");
 
-const getUniversitiesByCountry = (countryCode: string) => {
+const getUniversitiesByCountries = (countryCodes: string[]) => {
   if (!data.value) return [];
-  return data.value.filter((item) => item.alpha_two_code === countryCode);
+  return data.value.filter((uni) => countryCodes.includes(uni.alpha_two_code));
 };
 
 const universities = computed(() => {
   if (!data.value) return [];
-  return store.selectedCountry
-    ? getUniversitiesByCountry(store.selectedCountry)
+  return store.selectedCountries
+    ? getUniversitiesByCountries(store.selectedCountries)
     : data.value;
 });
 </script>
 
 <template>
   <div
-    class="flex flex-row gap-4 w-full justify-center px-6 pb-6 shadow-md z-10"
+    class="flex flex-col gap-4 w-full justify-center px-6 pb-6 shadow-md z-10"
   >
     <CountrySelector v-if="store.countries" :data="store.countries" />
     <SearchBar v-model="search" />
@@ -36,7 +36,7 @@ const universities = computed(() => {
   >
     <span v-if="error" class="text-red-500">Error: {{ error.message }}</span>
     <UniversityTable
-      v-if="data && store.selectedCountry"
+      v-if="data && store.selectedCountries"
       :data="universities"
       :search-filter="search"
     />

@@ -30,7 +30,7 @@ const getInitialFavorites = computed(() => {
 });
 
 export const store = reactive({
-  selectedCountry: "CA",
+  selectedCountries: ["CA"],
   favorites: getInitialFavorites.value,
   countries: await getInitialCountries.value,
 });

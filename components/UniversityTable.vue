@@ -45,7 +45,7 @@ const isFavorite = (item: University) => {
         <tr
           v-for="item in filteredData"
           :key="item.domains[0] + item.name"
-          class="odd:bg-white even:bg-slate-50"
+          class="even:bg-white odd:bg-slate-50"
         >
           <th scope="row" class="px-6 py-4 font-medium text-gray-900">
             {{ item.name }}
