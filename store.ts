@@ -1,5 +1,6 @@
 import { reactive } from "vue";
 import type { Country, University } from "./helpers/types";
+import { precomputedCountries } from "./helpers/country";
 
 const getInitialCountries = computed(async () => {
   const baseUrl = "http://universities.hipolabs.com/search";
@@ -30,10 +31,14 @@ const getInitialFavorites = computed(() => {
 });
 
 export const store = reactive({
-  selectedCountries: ["CA"],
+  selectedCountries: ["CA", "BR"],
   favorites: getInitialFavorites.value,
-  countries: await getInitialCountries.value,
+  countries: precomputedCountries,
 });
+
+export const fetchCountries = async () => {
+  store.countries = await getInitialCountries.value;
+};
 
 export const toggleFavorite = (item: University) => {
   const index = store.favorites.findIndex((i) => i.name === item.name);

@@ -1,3 +1,9 @@
+<script setup lang="ts">
+import { fetchCountries } from "./store";
+
+fetchCountries();
+</script>
+
 <template>
   <div class="h-screen flex flex-col">
     <TopNav />

@@ -6,11 +6,7 @@ const search = ref("");
 </script>
 
 <template>
-  <!-- <div class="flex flex-col gap-8 mx-4 sm:mx-8 md:mx-12 lg:mx-16 xl:mx-20"> -->
-  <div
-    class="flex flex-row gap-4 w-full justify-center px-6 pb-6 shadow-md z-10"
-  >
-    <!-- <CountrySelector v-if="store.countries" :data="store.countries" /> -->
+  <div class="flex gap-4 w-full px-6 pb-6 shadow-md z-10">
     <SearchBar v-model="search" />
   </div>
   <div
@@ -24,8 +20,10 @@ const search = ref("");
       >Explore universities</NuxtLink
     >
   </div>
-  <div v-else class="flex-grow overflow-y-auto">
+  <div
+    v-else
+    class="flex-grow overflow-y-auto px-6 py-6 sm:px-8 md:px-12 lg:px-16 xl:px-20"
+  >
     <UniversityTable :data="store.favorites" :search-filter="search" />
   </div>
-  <!-- </div> -->
 </template>

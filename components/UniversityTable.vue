@@ -30,6 +30,7 @@ const isFavorite = (item: University) => {
 <template>
   <div class="relative overflow-x-auto flex-grow">
     <table
+      v-if="store.selectedCountries.length > 0"
       class="table-fixed w-full max-h-20 text-sm text-left rtl:text-right relative"
     >
       <thead class="text-md uppercase sticky top-0">
@@ -72,5 +73,11 @@ const isFavorite = (item: University) => {
         </tr>
       </tbody>
     </table>
+    <div
+      v-else
+      class="flex items-center justify-center h-96 text-gray-400 text-lg"
+    >
+      Select countries to explore universities
+    </div>
   </div>
 </template>
